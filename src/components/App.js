@@ -14,27 +14,13 @@ class App extends React.Component {
     }
 
     onSearchSubmit = (term) => {
-        const self = this;
-
-        go(
-            axios({
-                method: "post",
-                url: "/v1/cars",
-                data: {
-                    name: term
-                }
-            }),
-            ({data}) => {
-                self.setState({images: data})
-            }
-        );
+        console.log(term);
     }
 
     render() {
         return (
             <div className="ui container" style={{margin: '10px'}}>
                 <SearchBar onSubmit={this.onSearchSubmit}/>
-                Found : {this.state.images.length} images
             </div>
         )
     }
