@@ -1,30 +1,16 @@
+
 import React from 'react';
-import axios from 'axios';
-import {go} from 'fxjs';
-import SearchBar from "./SearchBar";
+import SongList from "./SongList";
 
+class App extends React.Component{
 
-class App extends React.Component {
-
-    constructor(props){
-        super(props);
-        this.state = {
-            images: []
-        };
-    }
-
-    onSearchSubmit = (term) => {
-        console.log(term);
-    }
-
-    render() {
+    render(){
         return (
-            <div className="ui container" style={{margin: '10px'}}>
-                <SearchBar onSubmit={this.onSearchSubmit}/>
-            </div>
+            <div><SongList/></div>
         )
     }
 
 }
+
 
 export default App;
